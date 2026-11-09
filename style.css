@@ -1,0 +1,216 @@
+/* BloodBridge - Custom Theme Styles */
+
+:root {
+    --primary-red: #c1121f;
+    --primary-dark: #780000;
+    --accent-red: #e63946;
+    --light-red: #fff1f2;
+    --subtle-red: #ffe4e6;
+    --border-red: #fecdd3;
+    --text-main: #1f2937;
+    --text-muted: #4b5563;
+    --bg-light: #fffafb;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: linear-gradient(180deg, #ffffff 0%, #fff7f7 50%, #fff1f2 100%);
+    color: var(--text-main);
+    min-height: 100vh;
+}
+
+/* Glassmorphism & Card Styles */
+.bb-card {
+    background: #ffffff;
+    border: 2px solid #fecdd3;
+    border-radius: 1.25rem;
+    box-shadow: 0 10px 25px -5px rgba(225, 29, 72, 0.08), 0 8px 10px -6px rgba(225, 29, 72, 0.04);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bb-card:hover {
+    border-color: #f43f5e;
+    box-shadow: 0 20px 30px -10px rgba(225, 29, 72, 0.15);
+}
+
+/* Custom Box Style for Inputs and Selects */
+.bb-input-box {
+    width: 100%;
+    background-color: #ffffff;
+    border: 2px solid #fecdd3;
+    border-radius: 0.85rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    color: #1f2937;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+.bb-input-box:focus {
+    border-color: var(--primary-red);
+    box-shadow: 0 0 0 4px rgba(225, 29, 72, 0.15);
+    background-color: #fff;
+}
+
+.bb-select-box {
+    width: 100%;
+    background-color: #ffffff;
+    border: 2px solid #fecdd3;
+    border-radius: 0.85rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    color: #1f2937;
+    transition: all 0.2s ease;
+    outline: none;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23c1121f' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.75rem center;
+    background-repeat: no-repeat;
+    background-size: 1.25em 1.25em;
+    padding-right: 2.5rem;
+    appearance: none;
+}
+
+.bb-select-box:focus {
+    border-color: var(--primary-red);
+    box-shadow: 0 0 0 4px rgba(225, 29, 72, 0.15);
+}
+
+/* Buttons */
+.btn-blood-primary {
+    background: linear-gradient(135deg, #c1121f 0%, #e63946 100%);
+    color: white;
+    font-weight: 600;
+    padding: 0.85rem 1.75rem;
+    border-radius: 0.85rem;
+    box-shadow: 0 4px 14px rgba(193, 18, 31, 0.35);
+    transition: all 0.25s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.btn-blood-primary:hover {
+    background: linear-gradient(135deg, #a00d19 0%, #c1121f 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(193, 18, 31, 0.45);
+}
+
+.btn-blood-secondary {
+    background: #ffffff;
+    color: var(--primary-red);
+    border: 2px solid var(--primary-red);
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.85rem;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.btn-blood-secondary:hover {
+    background-color: var(--light-red);
+    transform: translateY(-1px);
+}
+
+/* Pulse Animation for Logo / Droplets */
+@keyframes heartPulse {
+    0% { transform: scale(1); }
+    15% { transform: scale(1.06); }
+    30% { transform: scale(1); }
+    45% { transform: scale(1.04); }
+    60% { transform: scale(1); }
+    100% { transform: scale(1); }
+}
+
+.heart-pulse {
+    animation: heartPulse 2.8s infinite ease-in-out;
+}
+
+/* Modal Overlay & Transitions */
+.modal-overlay {
+    backdrop-filter: blur(8px);
+    background-color: rgba(120, 0, 0, 0.45);
+    transition: opacity 0.3s ease-in-out;
+}
+
+.modal-content-box {
+    animation: popIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.92) translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #fff1f2;
+}
+::-webkit-scrollbar-thumb {
+    background: #f43f5e;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #c1121f;
+}
+
+/* Badge for Blood Groups */
+.blood-badge {
+    background: linear-gradient(135deg, #ffe4e6 0%, #fecdd3 100%);
+    color: #9f1239;
+    border: 1px solid #fda4af;
+    padding: 0.35rem 0.75rem;
+    border-radius: 9999px;
+    font-weight: 700;
+    letter-spacing: 0.025em;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+/* Table Design */
+.donor-table th {
+    background-color: #fff1f2;
+    color: #881337;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.85rem 1rem;
+    border-bottom: 2px solid #fecdd3;
+    white-space: nowrap;
+}
+
+.donor-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #fee2e2;
+    font-size: 0.9rem;
+    vertical-align: middle;
+}
+
+.donor-table tr:hover td {
+    background-color: #fff8f8;
+}
+
+/* Map Container */
+#mapContainer {
+    height: 380px;
+    width: 100%;
+    border-radius: 0.85rem;
+    border: 2px solid #fecdd3;
+    z-index: 10;
+}
